@@ -33,32 +33,35 @@
             margin-top: 50px;
         }
 
-        /* You can customize the search engine styling here */
         #programmable-search {
             /* Add your Google search engine code here */
-            /* Paste the code obtained from Google Custom Search */
         }
 
-        /* Add additional styles for content underneath the search engine */
         #content {
             margin-top: 30px;
             text-align: center;
         }
+
+        #bottom-image {
+            margin-top: 30px; /* Add margin to separate the image from the content */
+        }
     </style>
     <!-- Paste your Google CSE code here -->
-    <!-- Replace the placeholder with your actual CSE code -->
     <script async src="https://cse.google.com/cse.js?cx=761788838365e4d89"></script>
 </head>
 <body>
     <div id="search-container">
         <div id="programmable-search">
             <!-- Google search box will be inserted here automatically -->
-            <div class="gcse-searchbox-only"></div>
+            <div class="gcse-searchbox-only" data-resultsUrl="https://www.google.com/search"></div>
         </div>
     </div>
 
     <div id="content">
         <!-- No text here, just centered content beneath the search engine -->
+
+        <!-- Image underneath the Google search engine -->
+        <img id="bottom-image" src="https://jpg.hoodamath.com/large/hooda-math-385x70.jpg" alt="Image Description">
     </div>
 </body>
 </html>
