@@ -8,3 +8,57 @@
   <!-- Other head elements (stylesheets, scripts, etc.) can go here -->
 </head>
 <body>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        #search-container {
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* You can customize the search engine styling here */
+        #programmable-search {
+            /* Add your Google search engine code here */
+            /* Paste the code obtained from Google Custom Search */
+        }
+
+        /* Add additional styles for content underneath the search engine */
+        #content {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+    <!-- Paste your Google CSE code here -->
+    <!-- Replace the placeholder with your actual CSE code -->
+    <script async src="https://cse.google.com/cse.js?cx=761788838365e4d89"></script>
+</head>
+<body>
+    <div id="search-container">
+        <div id="programmable-search">
+            <!-- Google search box will be inserted here automatically -->
+            <div class="gcse-searchbox-only"></div>
+        </div>
+    </div>
+
+    <div id="content">
+        <!-- No text here, just centered content beneath the search engine -->
+    </div>
+</body>
+</html>
