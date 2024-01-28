@@ -63,3 +63,70 @@
 </body>
 </html>
 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        #copy-container {
+            position: relative;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        #url {
+            flex-grow: 1;
+            padding: 0 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #copy-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="copy-container">
+        <div id="url">https://www.yourwebsite.com</div>
+        <div id="copy-icon">&#x1F4CB;</div>
+    </div>
+
+    <div id="content">
+        <!-- No text here, just centered content beneath the copy container -->
+    </div>
+
+    <script>
+        document.getElementById('copy-icon').addEventListener('click', function() {
+            var urlElement = document.getElementById('url');
+            var range = document.createRange();
+            range.selectNode(urlElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            alert('URL copied to clipboard!');
+        });
+    </script>
+</body>
+</html>
+
+
