@@ -113,12 +113,6 @@
       margin: 0;
       overflow: hidden;
     }
-    
-    #fullscreen-iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
 
     #fullscreen-btn {
       position: fixed;
@@ -136,17 +130,22 @@
 
 <button id="fullscreen-btn" onclick="openFullscreen()">Fullscreen</button>
 
-<iframe id="fullscreen-iframe" src="https://www.example.com" frameborder="0"></iframe>
-
 <script>
   function openFullscreen() {
-    var iframe = document.getElementById('fullscreen-iframe');
+    var iframe = document.createElement('iframe');
+    iframe.id = 'fullscreen-iframe';
+    iframe.src = 'https://www.example.com';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+
+    document.body.appendChild(iframe);
 
     if (iframe.requestFullscreen) {
       iframe.requestFullscreen();
     } else if (iframe.mozRequestFullScreen) { // Firefox
       iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
       iframe.webkitRequestFullscreen();
     } else if (iframe.msRequestFullscreen) { // IE/Edge
       iframe.msRequestFullscreen();
@@ -156,8 +155,6 @@
 
 </body>
 </html>
-
-
 
 
 
