@@ -32,11 +32,44 @@
     p {
       text-align: center;
     }
+
+    /* Logo styling */
+    .logo {
+      width: 385px;
+      height: 70px;
+      margin: 20px auto; /* Adjust the margin as needed */
+      display: block;
+    }
+
+    /* URL copy box styling */
+    .url-box {
+      margin: 20px auto; /* Adjust the margin as needed */
+      padding: 10px;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .clipboard {
+      font-size: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <!-- Logo -->
+  <img src="https://jpg.hoodamath.com/large/hooda-math-385x70.jpg" alt="Your Logo" class="logo">
+
+  <!-- URL copy box -->
+  <div class="url-box">
+    <span class="clipboard" onclick="copyToClipboard()">📋</span>
+    <input type="text" value="https://www.hoodamath.netlify.app" id="urlInput" readonly>
+  </div>
+
   <!-- Centered iframe -->
   <iframe src="https://games.s3.yandex.net/96821/m07n5ef2zycugs432sok71a13jd0hdc4/index.html" frameborder="0"></iframe>
 
@@ -53,6 +86,15 @@
     CCSS.Math.Practice.MP8 Look for and express regularity in repeated reasoning.
   </p>
 </div>
+
+<script>
+  function copyToClipboard() {
+    var urlInput = document.getElementById("urlInput");
+    urlInput.select();
+    document.execCommand("copy");
+    alert("URL copied to clipboard!");
+  }
+</script>
 
 </body>
 </html>
