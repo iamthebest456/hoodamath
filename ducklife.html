@@ -128,37 +128,64 @@
 </head>
 <body>
 
-<button id="fullscreen-btn" onclick="openFullscreen()">Fullscreen</button>
+<button id="fullscreen-btn" onclick="toggleFullscreen()">Toggle Fullscreen Iframe</button>
 
 <script>
-  function openFullscreen() {
-    var iframe = document.createElement('iframe');
-    iframe.id = 'fullscreen-iframe';
-    iframe.src = 'https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fduck-life-4.xml';
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.style.border = 'none';
+  function toggleFullscreen() {
+    var iframe = document.getElementById('fullscreen-iframe');
 
-    document.body.appendChild(iframe);
+    if (!iframe) {
+      // Create iframe if not present
+      iframe = document.createElement('iframe');
+      iframe.id = 'fullscreen-iframe';
+      iframe.src = 'https://www.example.com';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.border = 'none';
 
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.mozRequestFullScreen) { // Firefox
-      iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { // IE/Edge
-      iframe.msRequestFullscreen();
+      document.body.appendChild(iframe);
+
+      // Enter fullscreen mode
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      }
+
+      // Add event listener to remove iframe on fullscreen change
+      document.addEventListener('fullscreenchange', exitHandler);
+      document.addEventListener('mozfullscreenchange', exitHandler);
+      document.addEventListener('webkitfullscreenchange', exitHandler);
+      document.addEventListener('MSFullscreenChange', exitHandler);
+    } else {
+      // Exit fullscreen mode
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+
+    function exitHandler() {
+      // Remove iframe when exiting fullscreen
+      if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+        document.body.removeChild(iframe);
+        document.removeEventListener('fullscreenchange', exitHandler);
+        document.removeEventListener('mozfullscreenchange', exitHandler);
+        document.removeEventListener('webkitfullscreenchange', exitHandler);
+        document.removeEventListener('MSFullscreenChange', exitHandler);
+      }
     }
   }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-Have Fun!
