@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon link -->
+    <link rel="icon" href="Screenshot 2024-01-27 191120.png" type="image/x-icon">
+
+    <!-- Tab title -->
+    <title>Bowling 3D 2024 on Hooda Math</title>
+</head>
+<body>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 875px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    iframe {
+      width: 656px;
+      height: 400px; /* Adjust the height as needed */
+      border: 1px solid #ccc;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Center-aligned and bold headings */
+    h2 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Center-aligned text */
+    p {
+      text-align: center;
+    }
+
+    /* Logo styling */
+    .logo {
+      width: 385px;
+      height: 70px;
+      margin: 20px auto; /* Adjust the margin as needed */
+      display: block;
+    }
+
+    /* URL copy box styling */
+    .url-box {
+      margin: 20px auto; /* Adjust the margin as needed */
+      padding: 10px;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .clipboard {
+      font-size: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    /* Fullscreen button styling */
+    .fullscreen-button {
+      margin: 20px auto; /* Adjust the margin as needed */
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Logo -->
+  <img src="https://jpg.hoodamath.com/large/hooda-math-385x70.jpg" alt="Your Logo" class="logo">
+
+  <!-- URL copy box -->
+  <div class="url-box">
+    <span class="clipboard" onclick="copyToClipboard()">📋</span>
+    <input type="text" value="https://www.hoodamath.netlify.app" id="urlInput" readonly>
+  </div>
+
+  <!-- Fullscreen button -->
+  <button class="fullscreen-button" onclick="toggleFullscreen()">Fullscreen</button>
+
+  <!-- Centered iframe -->
+  <iframe src="https://games.s3.yandex.net/166908/0xr5s4a1ekzc2atchpwluec71pc6pik4/index.html" frameborder="0" id="gameIframe"></iframe>
+
+  <!-- Text underneath the iframe -->
+  <h2>Bowling 2024 Instructions</h2>
+  <p>
+    <br>
+    It may be a little tricky at first, but you can play Bowling 2024 by dragging the ball to the left or right to position the ball where you want to throw it, when you are ready to throw, simply flick the ball with your finger and Bowl!
+  </p>
+
+  <p>
+    Common Core State Standards<br>
+    CCSS.Math.Practice.MP1 Make sense of problems and persevere in solving them.<br>
+    CCSS.Math.Practice.MP8 Look for and express regularity in repeated reasoning.
+  </p>
+</div>
+
+<script>
+  function copyToClipboard() {
+    var urlInput = document.getElementById("urlInput");
+    urlInput.select();
+    document.execCommand("copy");
+    alert("URL copied to clipboard!");
+  }
+
+  function toggleFullscreen() {
+    var iframe = document.getElementById("gameIframe");
+
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+      iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) {
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) {
+      iframe.msRequestFullscreen();
+    }
+  }
+</script>
+
+</body>
+</html>
