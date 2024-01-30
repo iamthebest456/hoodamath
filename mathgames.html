@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Math Games 🕹️ Play On Hooda Math</title>
-  <link rel="icon" href="Screenshot 2024-01-27 191120.png" type="image/x-icon">
+  <link rel="icon" href="https://www.hoodamath.com/math-games/favicon.ico" type="image/x-icon">
   <style>
     body {
       margin: 0;
@@ -68,19 +68,35 @@
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .logo-container {
-      text-align: center;
+      width: 100%;
       background-color: #f1f1f1; /* Adjust the background color as needed */
       padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000; /* Ensure it's above other content */
     }
 
     .logo {
       width: 385px;
       height: 70px;
     }
+
+    /* Additional styling for the rest of your content */
+    .container {
+      max-width: 875px;
+      margin: 20px auto;
+      text-align: left;
+    }
+
+    /* Add more styles as needed */
   </style>
 </head>
 <body>
@@ -92,8 +108,13 @@
 
 <!-- The rest of your page content goes here -->
 
+<div class="container">
+  <!-- Other content within the container -->
+</div>
+
 </body>
 </html>
+
 
   
 <!DOCTYPE html>
